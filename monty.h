@@ -70,6 +70,7 @@ void stack(stack_t **stack, unsigned int line_number);
 void queue(stack_t **stack, unsigned int line_number);
 char **strtow(char *str, char *delims);
 char *get_int(int n);
+
 /* err msg */
 int usage_error(void);
 int malloc_error(void);
