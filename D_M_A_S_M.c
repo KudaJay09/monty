@@ -2,7 +2,7 @@
 /**
  * add - Adds the top two values of a stack_t linked list.
  * @stack: A pointer to stack
- * @line_number: The current working line number of a Monty bytecodes file.
+ * @line_number: The current working line number.
  */
 void add(stack_t **stack, unsigned int line_number)
 {
@@ -13,13 +13,13 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 
 	(*stack)->next->next->n += (*stack)->next->n;
-	monty_pop(stack, line_number);
+	pop(stack, line_number);
 }
 
 /**
  * sub - Subtracts the second value from the top
  * @stack: A pointer to the stack
- * @line_number: The current working line number of a Monty bytecodes file.
+ * @line_number: The current working line number.
  */
 void sub(stack_t **stack, unsigned int line_number)
 {
@@ -30,13 +30,13 @@ void sub(stack_t **stack, unsigned int line_number)
 	}
 
 	(*stack)->next->next->n -= (*stack)->next->n;
-	monty_pop(stack, line_number);
+	pop(stack, line_number);
 }
 
 /**
  * div - Divides the second value from the top
  * @stack: A pointer to the stack.
- * @line_number: The current working line number of a Monty bytecodes file.
+ * @line_number: The current working line number.
  */
 void div(stack_t **stack, unsigned int line_number)
 {
@@ -53,13 +53,13 @@ void div(stack_t **stack, unsigned int line_number)
 	}
 
 	(*stack)->next->next->n /= (*stack)->next->n;
-	monty_pop(stack, line_number);
+	pop(stack, line_number);
 }
 
 /**
  * mul - Multiplies the second value from the top
  * @stack: A pointer to the stack
- * @line_number: The current working line number of a Monty bytecodes file.
+ * @line_number: The current working line number.
  */
 void mul(stack_t **stack, unsigned int line_number)
 {
@@ -70,13 +70,13 @@ void mul(stack_t **stack, unsigned int line_number)
 	}
 
 	(*stack)->next->next->n *= (*stack)->next->n;
-	monty_pop(stack, line_number);
+	pop(stack, line_number);
 }
 
 /**
  * mod - Computes the modulus of the second value from the
  * @stack: A pointer to the top mode node of a stack_t linked list.
- * @line_number: The current working line number of a Monty bytecodes file.
+ * @line_number: The current working line number.
  */
 void mod(stack_t **stack, unsigned int line_number)
 {
@@ -93,5 +93,5 @@ void mod(stack_t **stack, unsigned int line_number)
 	}
 
 	(*stack)->next->next->n %= (*stack)->next->n;
-	monty_pop(stack, line_number);
+	pop(stack, line_number);
 }
