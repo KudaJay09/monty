@@ -1,0 +1,68 @@
+#include "monty.h"
+/**
+ * div - divides the second top element
+ * @head: pointer to stack
+ * @line_number: line number
+ */
+void div(stack_t **head, unsigned int line_number)
+{
+	 int i, tos1, tos2;
+        stack_t *temp = *head;
+
+        if (temp == NULL || temp->next == NULL)
+        {
+                fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+                free_list(*head);
+                free_array(tokens);
+                exit(EXIT_FAILURE);
+        }
+
+        tos1 = pop_int(head);
+        tos2 = pop_int(head);
+
+        if (tos1 == 0)
+        {
+                fprintf(stderr, "L%d: division by zero\n", line_number);
+                free_list(*head);
+                free_array(tokens);
+                exit(EXIT_FAILURE);
+        }
+
+        tos2 %= tos1;
+        i = add_dnodeint(head, tos2);
+        (void)i;
+}
+
+/**
+ * mod - division of the second top element
+ * @head: pointer to stack
+ * @line_number: line number
+ */
+void mod(stack_t **head, unsigned int line_number)
+{
+	int i, tos1, tos2;
+	stack_t *temp = *head;
+
+	if (temp == NULL || temp->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		free_list(*head);
+		free_array(tokens);
+		exit(EXIT_FAILURE);
+	}
+
+	tos1 = pop_int(head);
+	tos2 = pop_int(head);
+
+	if (tos1 == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		free_list(*head);
+		free_array(tokens);
+		exit(EXIT_FAILURE);
+	}
+
+	tos2 %= tos1;
+	i = add_dnodeint(head, tos2);
+	(void)i;
+}
