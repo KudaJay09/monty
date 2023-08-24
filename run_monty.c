@@ -72,7 +72,7 @@ void (*get_op_func(char *opcode))(stack_t**, unsigned int)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
-		{"div", div},
+		{"div", f_div},
 		{"mul", mul},
 		{"mod", mod},
 		{"pchar", pchar},
@@ -122,7 +122,7 @@ int run_monty(FILE *script_fd)
 			free_stack(&stack);
 			return (malloc_error());
 		}
-		else if (op_toks[0][0] == '#') // comment line
+		else if (op_toks[0][0] == '#')
 		{
 			free_tokens();
 			continue;

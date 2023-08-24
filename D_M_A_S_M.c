@@ -34,11 +34,11 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - Divides the second value from the top
+ * f_div - Divides the second value from the top
  * @stack: A pointer to the stack.
  * @line_number: The current working line number.
  */
-void div(stack_t **stack, unsigned int line_number)
+void f_div(stack_t **stack, unsigned int line_number)
 {
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{

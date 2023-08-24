@@ -23,7 +23,7 @@ char *get_int(int num)
 	fill_numbase_buff(temp, 10, ret, length);
 	if (num < 0 || num_l < 0)
 		ret[0] = '-';
-i
+
 	return (ret);
 }
 
